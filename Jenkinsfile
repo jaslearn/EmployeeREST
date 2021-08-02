@@ -5,7 +5,7 @@ pipeline {
     stage('Checkout') {
       steps {
         // Get some code from a GitHub repository
-        git 'https://github.com/jasdhir/EmployeeREST.git'
+        git branch: "main", url: 'https://github.com/jaslearn/EmployeeREST.git'
       }
     }
         stage('Build') {
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('DockerBuild') {
       steps {
-        sh 'docker build -t jasdhir/employee-rest:latest .'
+        sh 'docker build -t jasdhir/emp-rest:latest .'
       }
         }
   }
