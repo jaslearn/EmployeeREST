@@ -25,5 +25,10 @@ pipeline {
         sh 'docker build -t jasdhir/emp-rest:latest .'
       }
         }
+         stage('DockerRun') {
+      steps {
+        sh 'docker run -p 9090:9090 jasdhir/emp-rest'
+      }
+        }
   }
 }
